@@ -4,6 +4,7 @@ package day1.example;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.List;
 
 public class students {
@@ -26,10 +27,11 @@ public class students {
 
 	private String[]  studentsNamesInAlphabetOrder() {
 		
+		//String studentsNameNotInOrder[] = new String[7];
 		String studentsNameInOrder[] = new String[7];
 		
-		String fileName = "C:\\Users\\jeyth\\eclipse-workspace\\Sample\\studentsName";
-		
+		String fileName = "C:\\git_code\\project2020\\Sample\\Sample\\studentsName";
+	
 		
 		 //String fileName="RAILWAY.txt";
 	       try{
@@ -57,28 +59,8 @@ public class students {
 	          System.out.println("Error while reading file line by line:" + e.getMessage());                      
 	       }
 				
-	       int i , j;
-	       String temp;
-	       
-	       for (i=0;i<studentsNameInOrder.length;i++) {
-	    	   
-	    	   for(j=i+1;j<studentsNameInOrder.length;j++) {
-	    		  
-	    		   if(studentsNameInOrder[i].compareToIgnoreCase(studentsNameInOrder[j])>0)
-	    		   {
-	    			  temp=studentsNameInOrder[i];
-	    			  studentsNameInOrder[i]= studentsNameInOrder[j];
-	    			  studentsNameInOrder[j]= temp;
-	    			  
-	    		   }
-	    		   
-	    	   }
-	    	   
-	    	   
-	    	
-	    	   
-	       }
-	       
+	     
+	        Arrays.sort(studentsNameInOrder);
 	       
 	     return studentsNameInOrder;
 	       
